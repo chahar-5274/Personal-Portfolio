@@ -1,0 +1,298 @@
+   /* GLOBAL RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #222;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+   /* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeDown 1s ease;
+}
+
+.hero h2 {
+  margin: 10px 0;
+  animation: fadeUp 1.2s ease;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  animation: fadeUp 1.4s ease;
+}
+
+/* Dark mode toggle button */
+.dark-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+}
+
+   /* GLOBAL BUTTON + LINK ANIMATIONS (ALL BUTTONS) */
+button,
+.btn,
+.links a,
+.social-links a {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+/* Hover lift + glow */
+button:hover,
+.btn:hover,
+.links a:hover,
+.social-links a:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Click animation */
+button:active,
+.btn:active,
+.links a:active,
+.social-links a:active {
+  transform: scale(0.95);
+}
+
+/* Shine animation */
+button::after,
+.btn::after,
+.links a::after,
+.social-links a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+button:hover::after,
+.btn:hover::after,
+.links a:hover::after,
+.social-links a:hover::after {
+  left: 100%;
+}
+
+   /* BUTTON STYLES */
+.btn {
+  background: #fff;
+  color: #1e40af;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 6px;
+}
+
+.secondary {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+   /* SECTIONS */
+section {
+  padding: 60px 10%;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e40af;
+}
+
+   /* ABOUT */
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+   /* SKILLS */
+.skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  list-style: none;
+}
+
+.skills li {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.35s;
+}
+
+.skills li:hover {
+  transform: scale(1.05);
+}
+
+   /* PROJECTS */
+.projects {
+  background: #eef2ff;
+}
+
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: 0.35s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.links a {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e40af;
+}
+
+   /* CONTACT */
+.contact {
+  background: #1e40af;
+  color: #fff;
+  text-align: center;
+  padding: 80px 10%;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.contact button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+}
+
+.social-links {
+  margin-top: 25px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 22px;
+  background: #fff;
+  color: #1e40af;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+   /* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+   /* DARK MODE */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .hero,
+body.dark .projects,
+body.dark .contact {
+  background: #020617;
+}
+
+body.dark .project-card,
+body.dark .skills li {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+body.dark button:hover,
+body.dark .btn:hover,
+body.dark .links a:hover,
+body.dark .social-links a:hover {
+  box-shadow: 0 12px 25px rgba(147, 197, 253, 0.3);
+}
+
+   /* ANIMATIONS */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+   /* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  section {
+    padding: 40px 6%;
+  }
+}
